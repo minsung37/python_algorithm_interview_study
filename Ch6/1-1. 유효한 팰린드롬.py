@@ -1,6 +1,4 @@
 # https://leetcode.com/problems/valid-palindrome/
-
-
 def isPalindrome(s: str) -> bool:
     alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r",
                 "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
@@ -10,7 +8,6 @@ def isPalindrome(s: str) -> bool:
         if x in alphabet:
             stack.append(x)
     n = len(stack)
-    print(stack)
     if stack[0:n] == stack[::-1]:
         return True
     else:

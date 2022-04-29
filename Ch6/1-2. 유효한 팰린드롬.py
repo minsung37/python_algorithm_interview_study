@@ -9,7 +9,6 @@ class Solution:
             if x in alphabet:
                 stack.append(x)
         n = len(stack)
-        print(stack)
         if stack[0:n] == stack[::-1]:
             return True
         else:
