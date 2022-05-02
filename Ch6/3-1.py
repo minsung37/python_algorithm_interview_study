@@ -6,12 +6,12 @@ class Solution:
         check_dig = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
         dig, let = [], []
         # 공백으로 나눠서 logs_split에 담기
-        logs_split = [i.split() for i in logs]
+        logs_split = [log.split() for log in logs]
         # 식별자 뒤에 수가나오면 dig에 담고 아니면 let에 담기
         for log in logs_split:
             check = log[1]
-            for i in check_dig:
-                if i in check:
+            for num in check_dig:
+                if num in check:
                     dig.append(log)
                     break
             else:
