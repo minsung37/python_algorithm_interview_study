@@ -11,9 +11,4 @@ class Solution:
                 another_num_index = nums.index(another_num)
                 result.append(num_index)
                 result.append(another_num_index)
-                break
-            nums[num_index] = target - another_num
-        return result
-
-
-
+                return result
