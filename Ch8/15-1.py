@@ -18,6 +18,3 @@ class Solution:
             # 이전거 prev에 저장
             prev = temp
         return prev
-
-
-
