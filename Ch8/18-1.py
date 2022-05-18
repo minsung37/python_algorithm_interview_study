@@ -24,6 +24,3 @@ class Solution:
         # 홀수 노드 뒤에 짝수 붙이기
         odd.next = even_head
         return head
-
-
-

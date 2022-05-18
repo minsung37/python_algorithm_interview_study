@@ -9,7 +9,11 @@ def toLinkedList(List):
     head: ListNode = ListNode()
     curr = head
     for r in List:
+        print(r)
         node = ListNode(r)
         curr.next = node
         curr = curr.next
     return head.next
+
+
+toLinkedList([1, 2, 3, 4, 5])
