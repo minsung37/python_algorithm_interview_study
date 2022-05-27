@@ -1,5 +1,5 @@
 # https://leetcode.com/problems/design-circular-queue/
-# 110ms 14.7MB
+# 75ms 14.7MB
 class MyCircularQueue:
     def __init__(self, k: int):
         self.circle_queue = [None] * k
@@ -40,14 +40,8 @@ class MyCircularQueue:
 
     def isEmpty(self) -> bool:
         # 원형큐의 초기상태
-        if self.rear == self.front and self.circle_queue[self.rear] is None:
-            return True
-        else:
-            return False
+        return self.rear == self.front and self.circle_queue[self.rear] is None
 
     def isFull(self) -> bool:
         # 앞과 뒤가 같고 수가있으면 꽉찬 상태이다.
-        if self.rear == self.front and self.circle_queue[self.rear] is not None:
-            return True
-        else:
-            return False
+        return self.rear == self.front and self.circle_queue[self.rear] is not None
