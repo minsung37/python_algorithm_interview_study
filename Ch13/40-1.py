@@ -1,11 +1,14 @@
+# https://leetcode.com/problems/network-delay-time/
+# 514ms 16.5MB
 import heapq
 
 
 class Solution:
     @staticmethod
     def networkDelayTime(times: list[list[int]], n: int, k: int) -> int:
-        graph = [[] for _ in range(len(times) + 1)]
-        distance = [int(1e9)] * (len(times) + 1)
+        mx = 1000000000
+        graph, distance = [[] for _ in range(n + 1)], [mx] * (n + 1)
+
         for i in times:
             a, b, time = map(int, i)
             graph[a].append((b, time))
@@ -21,7 +24,7 @@ class Solution:
                 # 현재 노드가 이미 저리된 적이 있는 노드라면 무시
                 if distance[now] < dist:
                     continue
-                # 현재 노드와 연곃된 다른 인접한 노드들을 확인
+                # 현재 노드와 연결된 다른 인접한 노드들을 확인
                 for i in graph[now]:
                     cost = dist + i[1]
                     # 현재 노드를 거쳐서, 다른 노드로 이동하는 거리가 더 짧은 경우
@@ -29,7 +32,7 @@ class Solution:
                         distance[i[0]] = cost
                         heapq.heappush(q, (cost, i[0]))
         dijkstra(k)
-        return distance
-
-
-print(Solution.networkDelayTime([[2, 1, 1], [2, 3, 1], [3, 4, 1]], 4, 2))
+        result = max(distance[1:])
+        if result == mx:
+            result = -1
+        return result
