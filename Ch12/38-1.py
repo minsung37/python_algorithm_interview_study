@@ -6,7 +6,7 @@ import collections
 class Solution:
     @staticmethod
     def findItinerary(tickets: list[list[str]]) -> list[str]:
-        tickets, visited, result = sorted(tickets, reverse=True), [False] * len(tickets), []
+        tickets, result = sorted(tickets, reverse=True), []
         schedule = collections.defaultdict(list)
         for start, end in tickets:
             schedule[start].append(end)
