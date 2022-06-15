@@ -1,10 +1,4 @@
 # https://programmers.co.kr/learn/courses/30/lessons/81301
-
-
-
-
-
-
 def solution(s):
     number = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
     result, stack = [], ""
